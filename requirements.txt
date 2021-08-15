@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: © 2021 Open Networking Foundation <support@opennetworking.org>
+# SPDX-License-Identifier: Apache-2.0
+
+black~=19.10b0
+cryptography~=3.4.7
+python-jose~=3.3.0
+pylint~=2.7.2
+reuse~=0.11.1
