@@ -2,15 +2,22 @@
    "fccId":"P27-SCE4255W",
    "cbsdSerialNumber":"2009CW5000016",
    "installationParam":{
-      "latitude":32.344752,
-      "longitude":-111.012302,
+      "latitude":32.344817,
+      "longitude":-111.012476,
       "height":1,
       "heightType":"AGL",
-      "indoorDeployment":true
+      "indoorDeployment":true,
+      "antennaAzimuth": 0,
+      "antennaDowntilt": 0,
+      "antennaGain": 5,
+      "antennaBeamwidth": 360,
+      "horizontalAccuracy": 3,
+      "verticalAccuracy": 3,
+      "eirpCapability": 28
    },
    "professionalInstallerData":{
       "cpiId":"GOOG-001212",
       "cpiName":"Wei-Yu Chen",
-      "installCertificationTime":"2021-08-14T00:00:00Z"
+      "installCertificationTime":"2021-10-12T00:00:00Z"
    }
 }
