@@ -82,3 +82,13 @@ with session.post(CGI_URL, data=text_download_payload, stream=True) as r:
             f.write(chunk)
 
     print(f"{filename} log backup at {timestamp}.")
+
+
+clean_payload = {
+    "this_file": "logsave.htm",
+    "next_file": "logsave.htm",
+    "todo": "logClear",
+}
+
+r = session.post(CGI_URL, data=clean_payload)
+print(f"{serial_number} log cleared.")
