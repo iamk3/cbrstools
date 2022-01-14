@@ -29,7 +29,9 @@ args = parser.parse_args()
 
 if __name__ == "__main__":
     # get password
-    cpi_password = bytes(getpass.getpass(), "ascii")
+    cpi_password = bytes(
+        getpass.getpass(prompt="Password for CPI Key %s: " % args.key), "ascii"
+    )
 
     with open(args.key, "rb") as key_file:
         (pkey, cert, addl_cert) = pkcs12.load_key_and_certificates(

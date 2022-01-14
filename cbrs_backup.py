@@ -17,18 +17,18 @@ from lxml import etree
 parser = argparse.ArgumentParser()
 parser.add_argument("address", help="eNB IP address", type=str)
 parser.add_argument(
-    "-u", "--username", help="eNB UI login username", type=bytes, default=b"sc_femto"
+    "-u", "--username", help="eNB UI login username", type=str, default="sc_femto"
 )
 parser.add_argument(
-    "-p", "--password", help="eNB UI login password", type=bytes, default=b"scHt3pp"
+    "-p", "--password", help="eNB UI login password", type=str, default="scHt3pp"
 )
 args = parser.parse_args()
 
 ENB_DOMAIN = f"https://{args.address}/"
 CGI_URL = ENB_DOMAIN + "setup.cgi"
 
-USERNAME = args.username
-PASSWORD = args.password
+USERNAME = bytes(args.username.encode())
+PASSWORD = bytes(args.password.encode())
 
 # Disable SSL verification since we signed the certificate by our own
 session = requests.session()

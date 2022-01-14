@@ -9,6 +9,9 @@ SHELL = bash -e -o pipefail
 .PHONY: test lint pylint black blacken license help
 
 PYTHON_FILES      ?= $(wildcard *.py)
+SHELL_FILES       ?= $(wildcard *.sh)
+CPI_KEY           ?= $(wildcard *.p12)
+
 
 # tooling
 VIRTUALENV        ?= python3 -m venv
@@ -23,12 +26,17 @@ $(VENV_NAME): requirements.txt
   python -m pip install -r requirements.txt
 	echo "To enter virtualenv, run 'source $@/bin/activate'"
 
-test: black pylint license ## run tests
+test: shellcheck black pylint license ## run tests
 
 pylint: $(VENV_NAME) ## pylint check for best practices
 	source ./$</bin/activate ; set -u ;\
   pylint --version ;\
   pylint $(PYTHON_FILES)
+
+shellcheck:  ## shellcheck shell scripts
+  # SC1091 is excluded which is soucing the venv
+	shellcheck -V
+	shellcheck -e SC1091 $(SHELL_FILES)
 
 black: $(VENV_NAME) ## run black on python files in check mode
 	source ./$</bin/activate ; set -u ;\
