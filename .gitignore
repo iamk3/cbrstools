@@ -5,3 +5,6 @@ venv_cbrs
 output
 *.p12
 *.json
+signed_cbsd.txt
+dist
+build
