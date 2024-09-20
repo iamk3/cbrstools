@@ -1,9 +1,9 @@
 {
-   "fccId":"P27-SCE4255W",
-   "cbsdSerialNumber":"2009CW5000016",
+   "fccId":"CBSD_FCC_ID",
+   "cbsdSerialNumber":"CBSD_Serial_Number",
    "installationParam":{
-      "latitude":32.344817,
-      "longitude":-111.012476,
+      "latitude":numerical_latitude,
+      "longitude":numerical_longitude,
       "height":1,
       "heightType":"AGL",
       "indoorDeployment":true,
@@ -16,8 +16,8 @@
       "eirpCapability": 28
    },
    "professionalInstallerData":{
-      "cpiId":"GOOG-001212",
-      "cpiName":"Wei-Yu Chen",
-      "installCertificationTime":"2021-10-12T00:00:00Z"
+      "cpiId":"GOOG-XXXXXX",
+      "cpiName":"CPI Name",
+      "installCertificationTime":"<2024-09-20T00:00:00Z>"
    }
 }

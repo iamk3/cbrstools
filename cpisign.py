@@ -23,7 +23,7 @@ parser.add_argument(
     "signFiles",
     type=str,
     nargs="+",
-    help="The file name of sigature data, can accept multiple files in a time.",
+    help="The file name of signature data, can accept multiple files in a time.",
 )
 args = parser.parse_args()
 
