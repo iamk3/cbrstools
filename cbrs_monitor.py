@@ -31,7 +31,7 @@ parser.add_argument(
     "-p", "--password", help="eNB UI login password", type=str, default="scHt3pp"
 )
 parser.add_argument(
-    "-d", "--delay", help="delay in seconds beetween checks", type=int, default=60
+    "-d", "--delay", help="delay in seconds between checks", type=int, default=60
 )
 parser.add_argument(
     "-c",

@@ -51,7 +51,7 @@ serial_number = e.xpath("//td")[4].text
 download_payload = {
     "this_file": "logsave.htm",
     "next_file": "logsave.htm",
-    "todo": "logdownLoad",
+    "todo": "log_download",
 }
 
 with session.post(CGI_URL, data=download_payload, stream=True) as r:
@@ -69,7 +69,7 @@ with session.post(CGI_URL, data=download_payload, stream=True) as r:
 text_download_payload = {
     "this_file": "logsave.htm",
     "next_file": "logsave.htm",
-    "todo": "TxtlogdownLoad",
+    "todo": "txt_log_downLoad",
 }
 
 with session.post(CGI_URL, data=text_download_payload, stream=True) as r:
