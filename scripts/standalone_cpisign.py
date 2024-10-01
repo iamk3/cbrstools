@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-cpisign.py
+standalone_cpisign.py
+This is a derivative work based on cpisign.py located in this same repository.
 
 Utility for signing CPI data with key and signature file selection through pop-up dialogs.
 Outputs signed data to 'signed_cbsds.txt', appending if the file already exists.
 """
 
-# SPDX-FileCopyrightText: © 2021 Open Networking Foundation <support@opennetworking.org>
+# SPDX-FileCopyrightText: © 2024 iamk3
 # SPDX-License-Identifier: Apache-2.0
 
 import os
@@ -73,7 +74,7 @@ if __name__ == "__main__":
         print("Please select the signature data files:")
         args.signFiles = askopenfilenames(
             title="Select Signature Data Files",
-            filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
+            filetypes=[("JSON files", "*.json"), ("All files", "*.*")],
         )
 
     # Check if the user selected files
@@ -97,4 +98,6 @@ if __name__ == "__main__":
             output_file.write(f"Signed Data: {SIGNED}\n\n")
 
             # Print confirmation for each file signed
-            print(f"* {inFileJson['cbsdSerialNumber']} data was signed and written to 'signed_cbsds.txt'")
+            print(
+                f"* {inFileJson['cbsdSerialNumber']} data was signed and written to 'signed_cbsds.txt'"
+            )

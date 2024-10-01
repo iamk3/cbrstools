@@ -18,7 +18,7 @@ from lxml import etree
 
 
 def timestamp():
-    """ replace with logger eventually """
+    """replace with logger eventually"""
     return datetime.datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
 
 
