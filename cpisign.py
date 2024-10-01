@@ -30,7 +30,7 @@ args = parser.parse_args()
 if __name__ == "__main__":
     # get password
     cpi_password = bytes(
-        getpass.getpass(prompt="Password for CPI Key %s: " % args.key), "ascii"
+        getpass.getpass(prompt=f"Password for CPI {args.key}: "), "ascii"
     )
 
     with open(args.key, "rb") as key_file:

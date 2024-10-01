@@ -13,11 +13,13 @@ import os
 import json
 import getpass
 import argparse
+import sys
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename, askopenfilenames
 from jose import jws
 from cryptography.hazmat.primitives.serialization import pkcs12
 from cryptography.hazmat.primitives import serialization
-from tkinter import Tk
-from tkinter.filedialog import askopenfilename, askopenfilenames
+
 
 # Initialize Tkinter and hide the root window
 root = Tk()
@@ -46,7 +48,7 @@ if __name__ == "__main__":
     # Check if the user selected a file
     if not args.key:
         print("No key file selected. Exiting...")
-        exit(1)
+        sys.exit(1)
 
     # Get password for the selected CPI key
     cpi_password = bytes(
@@ -77,7 +79,7 @@ if __name__ == "__main__":
     # Check if the user selected files
     if not args.signFiles:
         print("No signature files selected. Exiting...")
-        exit(1)
+        sys.exit(1)
 
     # Create or append to 'signed_cbsds.txt'
     with open("signed_cbsds.txt", "a") as output_file:
